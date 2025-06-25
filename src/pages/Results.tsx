@@ -1,9 +1,10 @@
+
 import { useLocation, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { ArrowLeft, ThumbsUp, ThumbsDown, Minus, Brain, BarChart3, Clock, Sparkles, Zap, TrendingUp, History } from "lucide-react";
+import { ArrowLeft, ThumbsUp, ThumbsDown, Minus, Brain, BarChart3, Clock, Sparkles, Zap, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface SentimentResult {
@@ -367,13 +368,11 @@ const Results = () => {
             </Button>
             <Button 
               onClick={() => navigate("/history")}
-              className="relative group bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 hover:from-slate-600 hover:via-slate-500 hover:to-slate-600 text-white px-8 py-4 text-lg font-semibold backdrop-blur-sm border border-slate-500/50 hover:border-slate-400/60 transition-all duration-300 transform hover:scale-105 shadow-2xl overflow-hidden"
+              variant="outline"
+              className="border-slate-600/50 text-white hover:bg-slate-800/50 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative flex items-center">
-                <History className="h-5 w-5 mr-2 text-slate-300 group-hover:text-white transition-colors duration-300" />
-                <span className="group-hover:text-white transition-colors duration-300">View History</span>
-              </div>
+              <BarChart3 className="h-5 w-5 mr-2" />
+              View History
             </Button>
           </div>
         </div>
