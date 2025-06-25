@@ -61,22 +61,22 @@ const Results = () => {
   const getSentimentColor = (sentiment: string) => {
     switch (sentiment) {
       case 'positive':
-        return 'bg-emerald-900/40 text-emerald-100 border-emerald-400/50';
+        return 'bg-emerald-800/30 text-emerald-100 border-emerald-500/40';
       case 'negative':
-        return 'bg-rose-900/40 text-rose-100 border-rose-400/50';
+        return 'bg-rose-800/30 text-rose-100 border-rose-500/40';
       default:
-        return 'bg-amber-900/40 text-amber-100 border-amber-400/50';
+        return 'bg-amber-800/30 text-amber-100 border-amber-500/40';
     }
   };
 
   const getSentimentGradient = (sentiment: string) => {
     switch (sentiment) {
       case 'positive':
-        return 'from-emerald-900/20 to-green-900/20';
+        return 'from-emerald-900/10 to-green-900/10';
       case 'negative':
-        return 'from-rose-900/20 to-red-900/20';
+        return 'from-rose-900/10 to-red-900/10';
       default:
-        return 'from-amber-900/20 to-orange-900/20';
+        return 'from-amber-900/10 to-orange-900/10';
     }
   };
 
@@ -367,11 +367,11 @@ const Results = () => {
             </Button>
             <Button 
               onClick={() => navigate("/history")}
-              variant="outline"
-              className="border-slate-600/50 text-white hover:bg-slate-800/50 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
+              className="relative overflow-hidden bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 hover:from-slate-600 hover:via-slate-500 hover:to-slate-600 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl border border-slate-500/50 backdrop-blur-sm group"
             >
-              <BarChart3 className="h-5 w-5 mr-2" />
-              View History
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <BarChart3 className="h-5 w-5 mr-2 relative z-10 transition-colors duration-300 group-hover:text-blue-200" />
+              <span className="relative z-10">View History</span>
             </Button>
           </div>
         </div>
